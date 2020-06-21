@@ -1,0 +1,149 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html">
+  <title>test1</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      float: left;
+      margin: 0 5px;
+    }
+
+    button:hover {
+      background-color: #9eb0c6;
+    }
+
+    button {
+      border: 1px solid black;
+      cursor: pointer;
+      padding: 5px;
+      border: none;
+      border-radius: 20px;
+    }
+
+    /* table {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0);
+      background-color: rgb(255, 255, 255);
+      width: 80%;
+      text-align: center;
+      border-collapse: collapse;
+      border: 2px solid rgb(229, 229, 229);
+    } */
+  </style>
+  <script src="../../js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <ul>
+    <li><button id="firstPageBtn" onclick="changePage(1)">首页</button></li>
+    <li><button id="prePageBtn" onclick="changePage(currentPage-1)">
+        <<</button> </li> <li><button id="nextPageBtn" onclick="changePage(currentPage+1)">>></button></li>
+    <li><button id="lastPageBtn" onclick="changePage(countPage)">尾页</button></li>
+  </ul>
+  <br>
+  <br>
+  <button id="btn">显示页数</button> 
+
+  <!-- <table id="tb">
+      <tr>
+        <th>序号</th>
+        <th>性别</th>
+        <th>年龄</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>男</td>
+        <td>22</td>
+      </tr>
+    </table> -->
+  <!-- <div class="content">
+
+  </div>
+
+  <button onclick="add1()">add1</button>
+  <button onclick="add2()">add2</button> -->
+
+
+  <script>
+
+    // function add1() {
+    //   var bodycontent1 = "<table id=\"tb\"><tr><th>序号</th><th>性别</th> <th>年龄</th></tr><tr><td>1</td> <td>男</td> <td>22</td></tr>";
+    //   bodycontent1 += "";
+    //   bodycontent1 += "<tr><td>2</td>";
+    //   bodycontent1 += "<td>女</td>";
+    //   bodycontent1 += "<td>21</td></tr></table>";
+    //   $(".content:first").prepend(bodycontent1);
+    //   console.log(bodycontent1);
+
+    //   // bodycontent1="";
+    // }
+    // function add2() {
+    //   $(".content:first").empty();
+    // }
+
+
+
+
+    //传入的页数
+    var pageCount = 1;
+    var flag = 1;
+    //总数据
+    var orderSize;
+    //总页数
+    var countPage = 10;
+    //每一页需要的订单数
+    var countPerPage = 20;
+    //当前页数
+    var currentPage = 1;
+
+    $(document).ready(function () {
+
+      console.log("加载完成");
+      // 当才进入主页，页数为第一页 分页的‘<<’按钮无效
+      if (currentPage == 1) {
+        $("#prePageBtn").attr("disabled", true);
+      } else {
+        $("#prePageBtn").attr("disabled", false);
+      }
+    });
+
+    function changePage(page) {
+      if (page == 1) {
+        console.log("error");
+        $("#prePageBtn").attr("disabled", true);
+      } else {
+        console.log("normal");
+        $("#prePageBtn").attr("disabled",false);
+
+      currentPage=page;
+      pageCount = page;
+      }
+
+      if (page == countPage) {
+        $("#nextPageBtn").attr("disabled", true);
+      } else {
+        $("#nextPageBtn").attr("disabled", false);
+      currentPage=page;
+      pageCount = page;
+      }
+
+
+      console.log("传入第" + pageCount + "页," + countPerPage + "条数据");
+      $("#btn").html(currentPage);
+    }
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

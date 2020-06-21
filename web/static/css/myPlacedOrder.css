@@ -1,0 +1,184 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #CADBE9;
+    background-size: cover;
+    background-clip: border-box;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft yahei";
+    min-width: 1200px;
+}
+
+.myPlacedOrder {
+    position: relative;
+    top: 0;
+}
+
+.myPlacedOrder-nav {
+    width: 115px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background-color: white;
+}
+
+.myPlacedOrder-nav ul{
+    list-style-type: none;
+    float: left;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.myPlacedOrder-nav li{
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.myPlacedOrder-content {
+    position: relative;
+    left: 180px;
+    top: 40px;
+    width: 1000px;
+    height: 100%;
+    background-color: #6AAFE6;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.flex-item {
+    margin: 2px 0;
+    font-size: 15px;
+}
+
+.flex-item .title {
+    color: #0310189d;
+    margin: 0 5px 0 25px;
+}
+
+.receivedOrder-content,
+.processingOrder-content,
+.finishedOrder-content,
+.failedOrder-content {
+    position: relative;
+    background-color: white;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-bottom: 4px;
+}
+
+.receivedOrder-btnDiv {
+    position: absolute;
+    margin: 2px 0;
+    font-size: 15px;
+    right: 20px;
+    top: 2px;
+}
+
+.receivedOrder-confirmeBtn,
+.receivedOrder-notBtn {
+    margin: 4px 0;
+    height: 33px;
+    border-radius: 10px;
+    background-color: #d6ecfa;
+    color: #353866;
+}
+
+
+.finishedOrder-deleteBtn,
+.failedOrder-deleteBtn {
+    float: right;
+    background-color: #d6ecfa;
+    height: 27px;
+    border-radius: 5px;
+    color: #f15c5c;
+    margin: 0;
+    border: none;
+}
+
+.receivedOrder-getGoodBtn{
+    background-color: #d6ecfa;
+    height: 27px;
+    border-radius: 5px;
+    color: #f15c5c;
+    border: none;
+    margin: 12px 0 0 24px;
+}
+
+.receivedOrder-cancelBtn{
+    background-color: #d6ecfa;
+    height: 27px;
+    border-radius: 5px;
+    color: #f15c5c;
+    margin: 10px 48px 5px 0;
+    border: none;
+    float: right;
+}
+
+.processingOrder-cancelBtn{
+    background-color: #d6ecfa;
+    height: 27px;
+    border-radius: 5px;
+    color: #f15c5c;
+    margin: 10px 48px 5px 0;
+    border: none;
+    position: absolute;
+    right: 55px;
+    bottom: 0px;
+}
+
+
+.receivedOrder-commentBtn,
+.processingOrder-modifyBtn,
+.finishedOrder-commentBtn,
+.failedOrder-commentBtn {
+    float: right;
+    margin-right: 10px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: #d6ecfa;
+    color: #353866;
+}
+
+
+
+.modal-btn-delete,
+.modal-btn-submit {
+    height: 30px;
+    border-radius: 5px;
+    background-color: #8EC0E4;
+    width: 60px;
+    letter-spacing: 4px;
+}
+
+.modal-btn-cancel {
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    width: 60px;
+    letter-spacing: 4px;
+}
+
+.personInfo{
+    background-color: #d6ecfa;
+    height: 27px;
+    border-radius: 5px;
+    color: #353866;
+    border: none;
+    margin: 12px 0 0 24px;
+}
+
+#gradeDIV{
+    position: absolute;
+    left: 20px;
+}

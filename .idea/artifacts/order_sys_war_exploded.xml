@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="order_sys:war exploded">
+    <output-path>C:/apache-tomcat-8.5.50/webapps/order_sys</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="order_sys/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="order_sys" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

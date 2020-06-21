@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-Type" content="text/html;charset=utf-8" />
+    <title>我的接单</title>
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/myOrder.css"/>
+</head>
+
+<body>
+    <div id="myOrder">
+        <div id="myOrder-nav">
+            <ul>
+                <li class="nav_dispatchingOrder">进行中</li>
+                <li class="nav_finishedOrder">已完成</li>
+                <li class="nav_failedOrder">已失败</li>
+            </ul>
+        </div>
+        <div id="myOrder-content">
+            <div class="module_dispatchingOrder dispatchingOrder">
+                <!-- <div class="dispatchingOrder-content" id="20001">
+                    <div class="item"><span class="title">1订单时间:</span><span>2019/12/8</span><span
+                            class="title">配送截止时间:</span><span>2019/12/10
+                            14:40</span><span class="title">商品规格:</span><span>小件</span><span
+                            class="title">要求:</span><span>【不限】</span><span class="title">配送费:</span><span>5元</span>
+                    </div>
+                    <div class="item"><span class="title">取货地点:</span><span>西安电子科技大学南校区，综合楼二楼韵达快递</span></div>
+                    <div class="item"><span class="title">送货地点:</span><span></span>西安电子科技大学南校区，2号宿舍楼509室</span>
+                    </div>
+                    <div class="item"><span class="title">联系方式:</span><span></span>15319436400</span></div>
+                    <div class="item"><span class="title">备注:</span><span></span>取货码18181</span></div>
+                    <div>
+                        <button class="confirmBtn" data-toggle="modal" data-target="#deliveryModal">确认送达</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="module_finishedOrder finishedOrder">
+                <!-- <div class="finishedOrder-content" id="30001">
+                    <div class="flex-item"><span class="title">1订单时间:</span><span>2019/12/8</span><span
+                            class="title">配送截止时间:</span><span>2019/12/10
+                            14:40</span><span class="title">商品规格:</span><span>小件</span><span
+                            class="title">要求:</span><span>【不限】</span><span class="title">配送费:</span><span>5元</span>
+                    </div>
+                    <div class="item"><span class="title">取货地点:</span><span>西安电子科技大学南校区，综合楼二楼韵达快递</span></div>
+                    <div class="item"><span class="title">送货地点:</span><span></span>西安电子科技大学南校区，2号宿舍楼509室</span>
+                    </div>
+                    <div class="item"><span class="title">联系方式:</span><span></span>15319436400</span></div>
+                    <div class="item"><span class="title">备注:</span><span></span>取货码18181</span></div>
+                    <div>
+                        <button class="deleteBtn finishedDeleteBtn" data-toggle="modal" data-target="#deleteModal">删除订单</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="module_failedOrder failedOrder">
+                <!-- <div class="failedOrder-content" id="40001">
+                    <div class="flex-item"><span class="title">1订单时间:</span><span>2019/12/8</span><span
+                            class="title">配送截止时间:</span><span>2019/12/10
+                            14:40</span><span class="title">商品规格:</span><span>小件</span><span
+                            class="title">要求:</span><span>【不限】</span><span class="title">配送费:</span><span>5元</span>
+                    </div>
+                    <div class="item"><span class="title">取货地点:</span><span>西安电子科技大学南校区，综合楼二楼韵达快递</span></div>
+                    <div class="item"><span class="title">送货地点:</span><span></span>西安电子科技大学南校区，2号宿舍楼509室</span>
+                    </div>
+                    <div class="item"><span class="title">联系方式:</span><span></span>15319436400</span></div>
+                    <div class="item"><span class="title">备注:</span><span></span>取货码18181</span></div>
+                    <div>
+                        <button class="feedbackBtn" data-toggle="modal" data-target="#feedbackModal">反馈</button>
+                        <button class="deleteBtn failedDeleteBtn" data-toggle="modal"
+                            data-target="#deleteModal">删除订单</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 取消订单模态框 -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">注意！</h4>
+                </div>
+                <div class="modal-body">确认取消订单？</div>
+                <div class="modal-footer">
+                    <input type="hidden" id="cancelInfoID" />
+                    <button type="button" data-dismiss="modal" class="modal-btn-confirm"
+                        onclick="confirmCancelOrder()">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 确认送达模态框 -->
+    <div class="modal fade" id="deliveryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">确认该订单完成？</div>
+                <div class="modal-footer">
+                    <input type="hidden" id="deliveryInfoID" />
+                    <button type="button" data-dismiss="modal" class="modal-btn-confirm"
+                        onclick="confirmDelivery()">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 删除订单模态框 -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">确认永久删除该订单信息？</div>
+                <div class="modal-footer">
+                    <input type="hidden" id="deleteInfoID" />
+                    <button type="button" data-dismiss="modal" class="modal-btn-confirm"
+                        onclick="confirmDeleteOrder()">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="../../js/myOrder.js"></script>
+
+</body>
+
+</html>
