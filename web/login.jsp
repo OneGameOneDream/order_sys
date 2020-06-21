@@ -20,8 +20,8 @@
             </div>
             <!--手机登录-->
             <form id="login-Tel">
-                <input id="login-telForTel" type="text" placeholder="电话号码" name="username"
-                       maxlength="11"/>
+                <input id="login-telForTel" type="text" placeholder="请输入账号" name="username"
+                       maxlength="20"/>
                 <br>
                 <input id="login-pwdForTel" type="password" placeholder="请输入密码" maxlength="20" name="password"
                 />

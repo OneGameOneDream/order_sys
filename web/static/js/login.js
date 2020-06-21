@@ -4,10 +4,7 @@
  */
 function checkTelForTel() {
     var Telephone = $.trim($("#login-telForTel").val());
-    if (Telephone.length != 11) {
-        $('.login-errorInfo').text('请输入正确的账号');
-        return false;
-    } else if (Telephone == "") {
+    if (Telephone == "") {
         $('.login-errorInfo').text('请输入账号！');
         return false;
     } else {
